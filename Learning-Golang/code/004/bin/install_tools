@@ -14,3 +14,4 @@ go install \
   github.com/maxbrunsfeld/counterfeiter/v6 \
   goa.design/model/cmd/mdl \
   goa.design/model/cmd/stz \
+  golang.org/x/tools/cmd/stringer \

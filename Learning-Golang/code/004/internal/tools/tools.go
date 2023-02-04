@@ -11,4 +11,6 @@ import (
 	_ "github.com/maxbrunsfeld/counterfeiter/v6"               // Mock/Spies/Stubs
 	_ "goa.design/model/cmd/mdl"                               // Structurizer
 	_ "goa.design/model/cmd/stz"                               // Structurizer
+	_ "go get golang.org/x/tools/cmd/stringer "                               // Structurizer
+
 )
