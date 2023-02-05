@@ -1,0 +1,8 @@
+goos: linux
+goarch: amd64
+pkg: benchmark
+cpu: 11th Gen Intel(R) Core(TM) i5-11600KF @ 3.90GHz
+BenchmarkConcat-6           	34442635	        37.12 ns/op	       8 B/op	       1 allocs/op
+BenchmarkConcat-6           	46158120	        25.83 ns/op	       8 B/op	       1 allocs/op
+BenchmarkConcat-6           	31953939	        34.54 ns/op	       8 B/op	       1 allocs/op
+BenchmarkConcat-6           	
