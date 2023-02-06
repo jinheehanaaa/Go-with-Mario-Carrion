@@ -1,5 +1,21 @@
 
 
+# 001
+- Start with typical server
+
+# 002
+- Refactor server
+- Introduces complexity
+
+# 003
+- Introduce functional options
+- Range over functions with Option type
+
+# 004
+- Add validation with error for each option
+
+# Conclustion
+- You can keep adding option without breaking existing API
 
 # Resources
 - [YouTube](https://www.youtube.com/watch?v=fe8vJSIzWss&list=PL7yAAGMOat_F7bOImcjx4ZnCtfyNEqzCy&index=13)
