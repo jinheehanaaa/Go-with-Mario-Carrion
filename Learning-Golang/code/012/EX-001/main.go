@@ -13,27 +13,39 @@ import (
 // 002. Change with pattern
 // Default config value from outisde of main
 // Use ServerOpts for Data Transfer Object (DTO) config
+// 003. Functional Options
+// Introduce Option Type that declares function
+// We return this Option
 
-type ServerOpts struct {
-	Address      string
-	ReadTimeout  time.Duration
-	WriteTimeout time.Duration
-}
+type Option func(*http.Server)
 
-// Take default value from ServerOpts
-func NewServerOpts() ServerOpts {
-	return ServerOpts{
-		Address:      ":8080",
-		ReadTimeout:  1 * time.Second,
-		WriteTimeout: 1 * time.Second,
+func WithAddr(addr string) func(*http.Server) {
+	return func(s *http.Server) {
+		s.Addr = addr
 	}
 }
 
-func NewServer(opt ServerOpts) http.Server {
+func WithReadTimeout(t time.Duration) func(*http.Server) {
+	return func(s *http.Server) {
+		s.ReadTimeout = t
+	}
+}
+
+func WithWriteTimeout(t time.Duration) func(*http.Server) {
+	return func(s *http.Server) {
+		s.WriteTimeout = t
+	}
+}
+
+func NewServer(opts ...Option) http.Server {
 	s := http.Server{
-		Addr:         opt.Address,
-		ReadTimeout:  opt.ReadTimeout,
-		WriteTimeout: opt.WriteTimeout,
+		//Addr:         opt.Address,
+		//ReadTimeout:  opt.ReadTimeout,
+		//WriteTimeout: opt.WriteTimeout,
+	}
+
+	for _, opt := range opts {
+		opt(&s)
 	}
 
 	return s
@@ -45,8 +57,11 @@ func main() {
 		fmt.Fprintf(w, "Hello")
 	})
 
-	s := NewServer(NewServerOpts())
-
+	s := NewServer(
+		WithAddr(":9191"),
+		WithReadTimeout(100*time.Millisecond),
+		WithWriteTimeout(100*time.Millisecond),
+	)
 	s.Handler = mux
 
 	if err := s.ListenAndServe(); err != nil {
