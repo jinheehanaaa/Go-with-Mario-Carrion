@@ -51,16 +51,30 @@ func main() {
 
 	fmt.Println("birth_year", birth_year)
 
-	// 2. Let's insert record into DB!
-	// Check: SELECT * FROM users;
-
-	name := "jinhee3"
-	birth_year = 1903
-
-	_, err = db.ExecContext(context.Background(), "INSERT INTO users(name, birth_year) VALUES($1, $2)", name, birth_year)
+	// Display name & bday from all users
+	rows, err := db.QueryContext(context.Background(), "SELECT name, birth_year FROM users")
 	if err != nil {
-		fmt.Println("db.ExecContext", err)
+		fmt.Println("row.Scan", err)
 		return
+	}
+	defer func() {
+		_ = rows.Close()
+	}()
+
+	if rows.Err() != nil {
+		fmt.Println("row.Err()", err)
+		return
+	}
+
+	for rows.Next() {
+		var name string
+		var birth_year int64
+
+		if err := rows.Scan(&name, &birth_year); err != nil {
+			fmt.Println("rows.Scan", err)
+			return
+		}
+		fmt.Println("name", name, "birth_year", birth_year)
 	}
 
 }
