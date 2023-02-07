@@ -53,7 +53,12 @@ func main() {
 
 	// 2. Let's insert record into DB!
 	// Check: SELECT * FROM users;
-	if _, err := db.ExecContext(context.Background(), "INSERT INTO users(name, birth_year) VALUES('jinhee2', 1901)"); err != nil {
+
+	name := "jinhee3"
+	birth_year = 1903
+
+	_, err = db.ExecContext(context.Background(), "INSERT INTO users(name, birth_year) VALUES($1, $2)", name, birth_year)
+	if err != nil {
 		fmt.Println("db.ExecContext", err)
 		return
 	}
