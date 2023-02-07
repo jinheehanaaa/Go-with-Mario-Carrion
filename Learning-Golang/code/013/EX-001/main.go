@@ -33,7 +33,7 @@ func main() {
 		fmt.Println("closed")
 	}()
 
-	// Let's access DB from Go!!
+	// 1. Let's access DB from Go!!
 	// Get value from DB
 	row := db.QueryRowContext(context.Background(), "SELECT birth_year FROM users WHERE name = 'jinhee'")
 	if err := row.Err(); err != nil {
@@ -50,5 +50,12 @@ func main() {
 	}
 
 	fmt.Println("birth_year", birth_year)
+
+	// 2. Let's insert record into DB!
+	// Check: SELECT * FROM users;
+	if _, err := db.ExecContext(context.Background(), "INSERT INTO users(name, birth_year) VALUES('jinhee2', 1901)"); err != nil {
+		fmt.Println("db.ExecContext", err)
+		return
+	}
 
 }
