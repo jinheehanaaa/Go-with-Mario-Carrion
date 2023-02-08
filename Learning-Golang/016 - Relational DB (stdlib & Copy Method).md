@@ -1,7 +1,8 @@
+# Objective
+- pgx's Copy Method is 10 times better than stdlib
 
-
-
-
+# More
+- [README.md](code/016/README.md)
 
 # Resources
 - [YouTube](https://www.youtube.com/watch?v=7m7EKTKeaK8&list=PL7yAAGMOat_F7bOImcjx4ZnCtfyNEqzCy&index=17)

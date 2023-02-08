@@ -1,6 +1,10 @@
+# Objective
+- Understand mysqls's functions
+- - RegisterLocalFile for reading local data.csv
+- - RegisterReaderHandler for modify
 
-
-
+# Detailed Note
+- [README.md](code/017/EX-001/README.md)
 
 # Resources
 - [YouTube](https://www.youtube.com/watch?v=FaXtQy98V7M&list=PL7yAAGMOat_F7bOImcjx4ZnCtfyNEqzCy&index=18)

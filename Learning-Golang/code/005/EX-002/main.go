@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// WithCancel
 func main() {
 	// Channel
 	ch := make(chan struct{})

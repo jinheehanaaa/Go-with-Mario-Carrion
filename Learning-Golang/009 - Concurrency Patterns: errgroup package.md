@@ -1,3 +1,8 @@
+# Objective
+
+# More
+- [README.md](code/012/README.md)
+
 # What is in errgroup?
 - Synchronization
 - Error propagation

@@ -1,14 +1,12 @@
-
 # mysql's functions
 - RegisterLocalFile
 - RegisterReaderHandler
 
+# 1.Register & Inserting data.csv into sql DB
+- <code>RegisterLocalFile</code> for data.csv output
+- <code>FIELDS TERMINATED BY ,ENCLOSED BY</code> for formatting
 
-# 1. Initial Step for inserting data.csv into sql DB
-- RegisterLocalFile for data.csv output
-- FIELDS TERMINATED BY ,ENCLOSED BY for formatting
-
-## Docker
+## 1-a: Docker
 ```
 docker run \
   --rm \
@@ -18,9 +16,10 @@ docker run \
   -p 3306:3306 \
   mysql:8.0.27
 ```
-- docker -f logs 0d7f9f4b0e46dcb76f2a77ecd504a9efa12c7e7a0f79e765d80544a307e8e6d7
-- docker exec -it 0d7f9f4b0e46dcb76f2a77ecd504a9efa12c7e7a0f79e765d80544a307e8e6d7 mysql -u root -p -h localhost
-## Create SQL DB Table
+- <code>docker -f logs 0d7f9f4b0e46dcb76f2a77ecd504a9efa12c7e7a0f79e765d80544a307e8e6d7</code>
+- <code>docker exec -it 0d7f9f4b0e46dcb76f2a77ecd504a9efa12c7e7a0f79e765d80544a307e8e6d7 mysql -u root -p -h localhost</code>
+
+## 1-b: Create SQL DB Table
 - <code>USE dbname;</code>
 ```sql
 CREATE TABLE users(
@@ -44,4 +43,4 @@ CREATE TABLE users(
 ## NewWriter()
 - - We modifiy record with NewWriter (buffer as return value)
 ## Flush()
-- - Save into writer
+- - Save buffer into writer

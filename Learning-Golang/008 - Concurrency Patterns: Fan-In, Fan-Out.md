@@ -1,5 +1,12 @@
+# Objective
+
+# More
+- [README.md](code/012/README.md)
+
 # What is the Fan-In pattern?
 - Consolidation of multiple channels into one channel by multiplexing each received value
+
+
 
 ## EX-001: Fan-In Pattern (Merging 2 files)
 ### merge1: sync package

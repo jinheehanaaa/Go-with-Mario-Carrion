@@ -1,3 +1,8 @@
+# Objective
+
+# More
+- [README.md](code/012/README.md)
+
 # Which Benchmark is fastest for reading string?
 - Sprintf (Exclude this becuase it's too slow)
 - Bytes

@@ -1,3 +1,9 @@
+# Objective
+
+# More
+- [README.md](code/012/README.md)
+
+
 # What is Concurrency?
 - Concurrency is the composition of independently executing processes
 - Concurrency is about dealing with lots of things at once

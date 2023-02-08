@@ -1,5 +1,11 @@
+# Objective
+
+# More
+- [README.md](code/012/README.md)
+
 # What is a Pipeline?
 - Chain of processing elements arranged so that output  of each element is the input of the next one
+
 
 # EX-001
 - [1] Sanitize & [2]Titlize

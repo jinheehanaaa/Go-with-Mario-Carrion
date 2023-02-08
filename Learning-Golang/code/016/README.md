@@ -25,7 +25,6 @@ CREATE TABLE users(
 );
 ```
 
-
 # Compare
 - stdlib: 70ms for 50 Records
 - pgx: 7 ms for 50 Records

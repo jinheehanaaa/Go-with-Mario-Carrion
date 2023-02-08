@@ -10,6 +10,7 @@ type jwt string
 
 const auth jwt = "JWT"
 
+// WithValue
 func main() {
 	ctx := context.WithValue(context.Background(), auth, "Bearer hi")
 

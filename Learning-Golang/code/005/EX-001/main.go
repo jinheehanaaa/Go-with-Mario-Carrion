@@ -12,6 +12,7 @@ import (
 // const shortDuration = 300 * time.Millisecond
 const shortDuration = 2 * time.Second
 
+// WithTimeout
 func main() {
 	// Pass a context with a timeout to tell a blocking function that it
 	// should abandon its work after the timeout elapses.
