@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "github.com/MarioCarrion/videos/2022/02/17/gen/go/user/v1;userpb";
+// CMD:
+// buf lint, buf generate, clang-format -i user/v1/user.proto
+message User {
+  // Type, FieldName, TagName
+  string uuid       = 1;
+  string full_name  = 2;
+  int64  birth_year = 3;
+}
