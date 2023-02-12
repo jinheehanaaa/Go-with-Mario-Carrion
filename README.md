@@ -1,6 +1,9 @@
 # Objectives
 - Learn Go
 
+# List
+- Learning Golang
+- Golang Microservices
 
 
 # Resources
