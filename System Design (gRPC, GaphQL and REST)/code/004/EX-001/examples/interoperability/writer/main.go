@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	userpb "github.com/MarioCarrion/videos/2022/02/24/gen/go/user/v1"
+	userpb "github.com/MarioCarrion/grpc-microservice-example/gen/go/user/v1"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -13,7 +13,7 @@ func main() {
 		Uuid:      "1-2-3-4",
 		FullName:  "Wario",
 		BirthYear: 2900,
-	} 
+	}
 
 	b, err := proto.Marshal(&u)
 	if err != nil {
